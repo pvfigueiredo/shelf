@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Listagem de Livros
+{% endblock title %}
+
+{% block content %}
+
+<div class="col-lg-12">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Livro</th>
+                <th>Nº de páginas</th>
+                <th>Categoria</th>
+                <th>Autor</th>
+                <th>Idioma</th>
+                <th>Link download</th>
+                <th>Audiobook</th>
+            </tr>
+        </thead>
+         <tbody>
+        {% for livro in livros %}
+            <tr>
+                <td>{{ livro.nome}}</td>
+                <td>{{ livro.num_paginas }}</td>
+                <td>{{ livro.categoria }}</td>
+                <td>{{ livro.autor }}</td>
+                <td>{{ livro.idioma }}</td>
+                <td>{{ livro.link }}</td>
+                <td>{{ livro.audio_book }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

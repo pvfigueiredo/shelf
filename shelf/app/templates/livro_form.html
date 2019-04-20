@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load materializecss %}
+{% block title %}
+Cadastro de Livros
+{% endblock title %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+
+    {{ form|materializecss }}
+    <button type="submit" class="btn btn-primary">
+        Salvar
+    </button>
+</form>
+
+{% endblock %}

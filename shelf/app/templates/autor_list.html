@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Listagem de Autores
+{% endblock %}
+
+{% block content %}
+
+<form method="get">
+<div class="col-lg-12">
+    <div class="input-group">
+      <input type="text" class="form-control" name="busca" placeholder="Buscar produto">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">Pesquisar</button>
+      </span>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Site ou Wiki</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for autor in autores %}
+            <tr>
+                <td>{{ autor.nome}}</td>
+                <td>{{ autor.web_site }}</td>
+                <td> <a href="{% url 'editar_produto' pk=produto.pk %}">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                     </a>
+                     <a href="{% url 'remover_produto' pk=produto.pk %}">
+                         <span class="glyphicon glyphicon-trash"></span>
+                     </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</form>
+
+{% endblock content %}

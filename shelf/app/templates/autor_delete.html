@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block tituloPagina %}
+Remoção de autores
+{% endblock tituloPagina %}
+
+{% block content %}
+<form method="post">{% csrf_token %}
+    <h4>Tem certeza que deseja excluir o autor "{{ autor.nome }}"</h4>
+    <br/>
+    <button type="submit" class="btn btn-primary">
+        Remover
+    </button>
+</form>
+
+{% endblock content %}
